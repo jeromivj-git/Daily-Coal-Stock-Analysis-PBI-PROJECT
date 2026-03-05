@@ -1,214 +1,209 @@
-📊 Daily Coal Stock Monitoring and Consumption Analysis
+# 📊 Daily Coal Stock Monitoring and Consumption Analysis
 
-🟤 Project Overview
+## 📌 Project Overview
+This project analyzes daily coal inventory data from thermal power stations across India to ensure efficient stock management and uninterrupted plant operations. Coal is a critical resource for power generation, and maintaining optimal stock levels is essential to prevent operational disruptions or excessive storage costs.
 
-This project focuses on analyzing daily coal inventory data to ensure efficient stock management and uninterrupted plant operations. Coal is a critical resource for energy generation, and maintaining optimal stock levels is essential to avoid operational risks and high storage costs.
+The dataset contains operational parameters such as daily coal receipt, daily consumption, actual stock levels, and normative stock levels. By comparing actual stock against normative requirements, the project evaluates whether coal inventory levels are within safe operational limits.
 
-The dataset includes key operational parameters such as:
+---
 
-Daily coal receipt
+## 🎯 Project Objectives
 
-Daily coal consumption
+### Monitor Coal Supply and Usage
+- Track daily coal receipt and daily consumption
+- Identify fluctuations in supply and demand
 
-Actual stock levels
+### Evaluate Stock Against Normative Levels
+- Compare actual stock with predefined normative stock
+- Measure deviation using Actual vs Normative %
 
-Normative stock requirements
+### Identify Risk Conditions
+- Detect potential coal shortages affecting operations
+- Identify excess stock that increases storage costs
 
-By comparing actual stock vs normative stock, this project evaluates inventory performance and identifies risk conditions.
+### Analyze Trends and Patterns
+- Study daily and monthly consumption trends
+- Understand stock movement over time
 
-🎯 Project Objectives
+### Improve Inventory Planning
+- Support forecasting of coal requirements
+- Assist management in procurement planning
 
-Monitor coal supply and consumption patterns.
+### Develop a Monitoring Dashboard
+- Create interactive dashboards using Power BI
 
-Evaluate stock levels against normative benchmarks.
+---
 
-Detect critical shortage and excess stock conditions.
-
-Analyze trends in coal inventory movement.
-
-Support procurement and logistics decision-making.
-
-Build interactive Power BI dashboards.
-
-🗂️ Data Source
+## 🗂️ Data Source
 
 The dataset is obtained from the India Data Portal – Ministry of Power.
 
-Domain: Energy Sector
+Dataset includes coal stock data from thermal power stations across India.
 
-Data Coverage: Thermal power stations across India
+Domain: Energy  
+Timeline: 2018 – 2025
 
-Time Period: 2018 – 2025
-
-Data Fields Include:
-
-Mode of transport
-
-Plant capacity
-
-Normative stock levels
-
-Coal receipts and consumption
-
-Plant load factor (PLF)
-
-Critical condition indicators
-
-🔗 Source Link:
+Source Link:  
 https://indiadataportal.com/p/power/r/mop-coal_stock-pl-dl-aaa
 
-🛠️ Tools & Technologies
+Key Data Fields:
+- Mode of Transport
+- Plant Capacity
+- Normative Stock
+- Actual Stock
+- Daily Receipt
+- Daily Consumption
+- Plant Load Factor (PLF)
+- Criticality Indicator
+- Remarks
 
-Microsoft Excel – Data Cleaning, Transformation, Pivot Tables
+---
 
-Power BI – Data Modeling, DAX Calculations, Visualization
+## 🛠️ Tools & Technologies
 
-Power Query – Data preprocessing and transformation
+- Excel – Data cleaning, transformation, pivot tables
+- Power BI – Data modelling, DAX calculations, dashboard visualization
+- Power Query – Data preprocessing
 
-GitHub / Documentation Tools – Project hosting and reporting
+---
 
-🧹 Data Pre-Processing
-Data Cleaning & Transformation
+## 🧹 Data Pre-Processing
 
-Removed duplicate records.
+### Data Cleaning
+- Removed duplicate records
+- Handled missing values
+- Standardized column formats
+- Created calculated fields
 
-Handled missing values.
-
-Standardized formats for date and numeric fields.
-
-Created calculated metrics.
-
-Calculated Metrics
+### Calculated Metrics
 
 Daily Consumption
 
-Daily Consumption = Total Stock / Stock Days
+Daily_Consumption = Total Stock / Stock Days
 
 Required Normative Stock
 
-Required Normative Stock = Daily Requirement × Normative Days
+Req_Normative_Stock = Daily Requirement × Normative Stock Days
 
-Actual vs Normative Stock Percentage
+Actual vs Normative %
 
-( Total Stock / Required Normative Stock ) × 100
-Data Modeling Structure
-Dimension Tables
+Actual_vs_Normative_% = (Total Stock / Req_Normative_Stock) × 100
 
-Dim_Plant
+---
 
-Dim_Date
+## 🧩 Data Modeling
 
-Dim_State
+The dataset was structured into Fact and Dimension tables.
 
-Fact Table
+### Dimension Tables
 
-Fact_Stock
+Dim_Plant  
+Plant ID | Plant Name | State | Sector | Utility | Capacity
 
-Relationships
+Dim_Date  
+Date ID | Date | Month | Year | Quarter
 
-Dim_State → Dim_Plant (1 : Many)
+Dim_State  
+State Code | State Name
 
-Dim_Plant → Fact_Stock (1 : Many)
+### Fact Table
 
-Dim_Date → Fact_Stock (1 : Many)
+Fact_Stock  
+Plant ID | Date ID | Mode of Transport | Daily Consumption | Daily Requirement | Indigenous Stock | Import Stock | Total Stock | Stock Days | PLF% | Critical | Remarks
 
-📊 Exploratory Data Analysis (EDA)
+### Relationships
+
+Dim_State → Dim_Plant (1:M)  
+Dim_Plant → Fact_Stock (1:M)  
+Dim_Date → Fact_Stock (1:M)
+
+---
+
+## 📊 Exploratory Data Analysis
 
 Analysis focused on:
 
-State-wise coal stock distribution
+- State-wise coal stock distribution
+- Daily consumption vs requirement
+- Indigenous vs import coal stock
+- Transport mode distribution
+- Power station capacity distribution
+- Plant Load Factor (PLF) performance
 
-Daily consumption vs requirement comparison
+---
 
-Plant load factor performance
+## 📈 Key Visualizations
 
-Transport mode distribution
+- Average PLF% across utilities
+- Average PLF% across sectors
+- Top 10 utilities by capacity
+- State-wise capacity distribution
+- Indigenous vs Import stock comparison
+- Daily consumption vs daily requirement
+- Distribution of power stations across states
 
-Power station capacity distribution
+---
 
-💡 Key Insights
+## 💡 Key Insights
 
-Total daily requirement exceeds actual consumption nationally, indicating a supply deficit.
+- Total daily requirement (13,074) exceeds actual consumption (11,695), indicating a national supply gap.
+- 108 plants are classified as critical due to low coal stock levels.
+- Average coal stock availability across plants is 8.23 days.
+- Demand is heavily concentrated in Uttar Pradesh and Maharashtra.
+- Bihar has the lowest operational stability with only 1.8 days of average coal stock.
 
-Approximately 108 plants are marked as critical due to low stock levels.
+---
 
-Average coal stock is sufficient for about 8 days of operations.
+## 🚨 Risk Analysis
 
-Demand is highly concentrated in major states such as Uttar Pradesh and Maharashtra.
+High-Risk Regions
+- West Bengal
+- Chhattisgarh
+- Bihar
 
-Bihar shows very low operational safety margins with less than 40% demand fulfillment.
+Operational Risks
+- Plants with less than 4 days of coal stock face shutdown risks.
+- Supply chain disruptions may impact national power grid stability.
 
-🚨 Risk Analysis
-High Risk States
+---
 
-West Bengal
+## 📊 Analytical Approach
 
-Chhattisgarh
+Descriptive Analysis  
+Summarizes current coal stock levels and operational metrics.
 
-Bihar
+Diagnostic Analysis  
+Identifies causes of supply shortages and consumption gaps.
 
-Operational Risks Identified
+Predictive Analysis  
+Identifies future risks such as stock depletion and plant shutdowns.
 
-Plants with less than 4 days stock are at shutdown risk.
+Prescriptive Analysis  
+Provides recommendations for improving coal logistics and supply management.
 
-Supply chain constraints impact power generation efficiency.
+---
 
-📈 Analysis Types Performed
-Descriptive Analysis
+## 🚀 Recommendations
 
-Total national consumption vs requirement.
+- Prioritize coal shipments to high-deficit states.
+- Maintain minimum safety stock levels of at least 7 days.
+- Improve rail-based coal transport logistics.
+- Conduct operational efficiency audits for underperforming plants.
+- Strengthen procurement planning and supply chain monitoring.
 
-Stock availability statistics.
+---
 
-Diagnostic Analysis
+## 📌 Conclusion
 
-Supply-side shortages.
+- India faces a systemic coal supply gap between requirement and consumption.
+- Over 100 power plants operate with critically low coal reserves.
+- Significant regional disparities exist in coal distribution.
+- Immediate logistics optimization is required to prevent power generation disruptions.
 
-Correlation between stock and consumption.
+---
 
-Predictive Analysis
 
-Future depletion risks.
 
-Power outage probability assessment.
-
-Prescriptive Analysis
-
-Supply chain optimization recommendations.
-
-🚀 Recommendations
-
-Prioritize coal supply to high deficit states.
-
-Maintain minimum safety stock levels (7+ days).
-
-Improve rail-based coal transport logistics.
-
-Conduct efficiency audits for underperforming plants.
-
-Optimize procurement and storage strategies.
-
-⚙️ How to Use
-
-Download the Power BI .pbix file.
-
-Open using Power BI Desktop.
-
-Use filters and slicers to explore:
-
-State-wise performance
-
-Plant-level metrics
-
-Monthly trends
-
-Critical plant analysis
-
-📌 Conclusion
-
-India faces a persistent coal supply gap between demand and consumption.
-
-Energy distribution is uneven across states.
-
-Immediate logistical and policy actions are required to maintain grid stability.
-
+Project Type: Data Analysis / Power BI Dashboard  
+Domain: Energy Analytics  
+Purpose: Academic / Portfolio Project
