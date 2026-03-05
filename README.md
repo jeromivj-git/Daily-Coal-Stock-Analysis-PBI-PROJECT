@@ -155,22 +155,6 @@ Analysis focused on:
 ---
 
 
-## 📊 Analytical Approach
-
-Descriptive Analysis  
-Summarizes current coal stock levels and operational metrics.
-
-Diagnostic Analysis  
-Identifies causes of supply shortages and consumption gaps.
-
-Predictive Analysis  
-Identifies future risks such as stock depletion and plant shutdowns.
-
-Prescriptive Analysis  
-Provides recommendations for improving coal logistics and supply management.
-
----
-
 ## 🚀 Recommendations
 
 - Prioritize coal shipments to high-deficit states.
