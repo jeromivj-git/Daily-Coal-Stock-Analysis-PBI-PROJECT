@@ -154,18 +154,6 @@ Analysis focused on:
 
 ---
 
-## 🚨 Risk Analysis
-
-High-Risk Regions
-- West Bengal
-- Chhattisgarh
-- Bihar
-
-Operational Risks
-- Plants with less than 4 days of coal stock face shutdown risks.
-- Supply chain disruptions may impact national power grid stability.
-
----
 
 ## 📊 Analytical Approach
 
