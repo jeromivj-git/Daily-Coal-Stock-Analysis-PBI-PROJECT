@@ -165,14 +165,23 @@ Analysis focused on:
 
 ---
 
-## 📌 Conclusion
+## ⚙️ How to Use
 
-- India faces a systemic coal supply gap between requirement and consumption.
-- Over 100 power plants operate with critically low coal reserves.
-- Significant regional disparities exist in coal distribution.
-- Immediate logistics optimization is required to prevent power generation disruptions.
+Follow these steps to explore the Power BI dashboard:
 
----
+1. Download the **Power BI project file (.pbix)** from this repository.
+
+2. Install **Microsoft Power BI Desktop** if it is not already installed on your system.
+
+3. Open **Power BI Desktop** and load the file:
+   - Click **File → Open**
+   - Select the downloaded `.pbix` file.
+
+4. Explore the interactive dashboard:
+   - Use **filters and slicers** to analyze coal stock data by state, sector, or power station.
+   - Hover over charts to view detailed metrics.
+   - Use **drill-down features** to analyze data at state and plant levels.
+
 
 
 
