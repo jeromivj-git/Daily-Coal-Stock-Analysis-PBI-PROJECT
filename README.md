@@ -1,4 +1,5 @@
 📊 Daily Coal Stock Monitoring and Consumption Analysis
+
 🟤 Project Overview
 
 This project focuses on analyzing daily coal inventory data to ensure efficient stock management and uninterrupted plant operations. Coal is a critical resource for energy generation, and maintaining optimal stock levels is essential to avoid operational risks and high storage costs.
